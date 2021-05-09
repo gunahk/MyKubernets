@@ -8,13 +8,14 @@
 # Auto completion of kubernets Commands 
 In Bash, we can do autocomletion of kubectl commands 
 
-For faster command Execution 
-example
+For faster command Execution
+s
+example:
 
-	K get de
+	Kubectl exec -it ngin
 Hit tab you will automatically promt 
 
-	K get deployment
+	Kubectl exec -it nginx-f89759699-8rzf8
 
 
 we need to add lines in the ~/.bashrc
@@ -33,6 +34,8 @@ source ~/.bashrc
 # Kubectx
 
 kubectx is a utility to manage and switch between kubectl contexts.
+
+![kubectx demo GIF](img/kubectx-demo.gif)
 
 ```
 USAGE:
@@ -63,6 +66,10 @@ Switched to context "oregon".
 
 
 # kubens
+
+kubenx is a utility to manage and switch between kubectl namespaces.
+
+![kubens demo GIF](img/kubens-demo.gif)
 
 ```
 USAGE:
@@ -98,10 +105,11 @@ sudo cp /opt/kubectx/kubens /usr/local/bin/kubens
 - [kubectx](https://github.com/ahmetb/kubectx)
 - [kubens](https://github.com/ahmetb/kubectx)
 
+---
 
 Its Very diificult to know Which Cluster you are in the Kubernets. 
 
-There  is a script By which, you can able to promt in which cluster You are in , and which namespace you are in Namespace.
+There  is a script By which, you can able to promt in Bash in which cluster You are in , and which namespace you are in Namespace.
 
 
 
@@ -113,11 +121,11 @@ There  is a script By which, you can able to promt in which cluster You are in ,
 Download the script and paste in the location.
 
 ```
-curl -o ~/kube-ps1.sh https://github.com/jonmosco/kube-ps1/blob/master/kube-ps1.sh 
+curl -o https://github.com/jonmosco/kube-ps1/blob/master/kube-ps1.sh /path/to/kube-ps1.sh
 ```
 Copy below Commands in the ~/.bashrc
 ```
-source ~/kube-ps1.sh
+source /path/to/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 ```
 
@@ -126,5 +134,34 @@ After Addding just reload the profile by
 ```
 source ~/.bashrc
 ```
+
+Your will be promted with Bash like below
+
+![kubens demo GIF](img/kubeps1.gif)
+
 reference: 
 -  [Kubernets ps1 ](https://github.com/jonmosco/kube-ps1)
+
+---
+# Execute the Command Inside the Container
+
+Some times you may need to execute Command, Inside the container to check services, telnet, nslookup 
+
+```
+kubectl run multitool --image=praqma/network-multitool
+```
+
+Add below command in the ~/.bashrc
+```
+alias kip="kubectl exec -it multitool --"
+```
+After Addding just reload the profile by
+```
+source ~/.bashrc
+```
+Then you can execute following Commands inside the pod
+
+```
+kip nslookup kubernetes
+``` 
+
