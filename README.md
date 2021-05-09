@@ -5,7 +5,7 @@
 -  [Installation of kubectx and kubens
 ](#Installation-of-kubectx-and-kubens
 )
--  [kube-ps1: Kubernetes prompt for bash](#kube-ps1:Kubernetes-prompt-for-bash)
+-  [kube-ps1: Kubernetes prompt for bash](#kube-ps1-Kubernetes-prompt-for-bash)
 
 -  [Make Easy to execute the Command Inside the Container](#Make-Easy-to-execute-the-Command-Inside-the-Container)
 
