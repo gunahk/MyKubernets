@@ -113,11 +113,11 @@ There  is a script By which, you can able to promt in which cluster You are in ,
 Download the script and paste in the location.
 
 ```
-curl -o https://github.com/jonmosco/kube-ps1/blob/master/kube-ps1.sh /path/to/kube-ps1.sh
+curl -o ~/kube-ps1.sh https://github.com/jonmosco/kube-ps1/blob/master/kube-ps1.sh 
 ```
 Copy below Commands in the ~/.bashrc
 ```
-source /path/to/kube-ps1.sh
+source ~/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 ```
 
