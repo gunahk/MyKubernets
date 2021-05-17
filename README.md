@@ -11,13 +11,13 @@
 
 
 ---
-# Kubernets Cheats Sheets
+# Kubernetes Cheats Sheets
 1. [Kubernets Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-2. [Kubernets Commands ](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)  (Kubectl coomds Reference)
+2. [Kubernets Commands ](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)  (Kubectl commands Reference)
 
 
 # Auto completion of kubernets Commands 
-In Bash, we can do autocomletion of kubectl commands 
+In Bash, we can do autocompletion of kubectl commands 
 
 For faster command Execution
 s
@@ -39,7 +39,7 @@ echo "source <(kubectl completion bash)"
 alias k=kubectl
 complete -F __start_kubectl k
 ```
-After Addding just reload the profile by
+After Adding just reload the profile by
 ```bash
 source ~/.bashrc
 ```
@@ -123,7 +123,7 @@ sudo cp /opt/kubectx/kubens /usr/local/bin/kubens
 # kube-ps1: Kubernetes prompt for bash
 
 
-Its Very diificult to know Which Cluster you are in the Kubernets. 
+Its Very difficult to know Which Cluster you are in the Kubernets. 
 
 There  is a script By which, you can able to promt in Bash in which cluster You are in , and which namespace you are in Namespace.
 
@@ -141,7 +141,7 @@ source /path/to/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 ```
 
-After Addding just reload the profile by
+After Adding just reload the profile by
 
 ```bash
 source ~/.bashrc
@@ -167,7 +167,7 @@ Add below command in the ~/.bashrc
 ```bash
 alias kip="kubectl exec -it multitool --"
 ```
-After Addding just reload the profile by
+After Adding just reload the profile by
 ```bash
 source ~/.bashrc
 ```
