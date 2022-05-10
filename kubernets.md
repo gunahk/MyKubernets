@@ -10,6 +10,9 @@
 -  [Make Easy to execute the Command Inside the Container](#Make-Easy-to-execute-the-Command-Inside-the-Container)
 
 
+<button id="demo" onclick="copyToClipboard(document.getElementById('demo').innerHTML)">This is what asdf d I want to copy</button>
+
+
 ---
 # Kubernetes Cheats Sheets
 1. [Kubernets Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
@@ -190,3 +193,34 @@ Then you can execute following Commands inside the pod. By the Below commands.
 ```bash
 kip nslookup kubernetes
 ```
+
+Kubernetes namespace is in struck
+
+```bash
+namespace=<deleting_namespace>
+kubectl get namespace ${namespace} -o json \
+  | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
+  | kubectl replace --raw /api/v1/namespaces/stucked-namespace/finalize -f -
+kubectl delete namespace ${namespace} --grace-period=15 
+```
+or 
+
+```bash
+kubectl get namespace ${namespace} -o json > ${namespace}.json
+kubectl replace --raw "/api/v1/namespaces/${namespace}/finalize" -f ./${namespace}.json
+```
+K8s ingress not deleting
+
+Get the ing
+
+```bash
+ingress=$(kubectl get ingress  -o custom-columns=":metadata.name")
+```
+
+```bash
+kubectl patch ingress ${ingress} -p '{"metadata":{"finalizers":[]}}' --type=merge
+bash
+
+
+
+

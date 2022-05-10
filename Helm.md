@@ -20,7 +20,7 @@ helm list -a
 helm create guna
 ```
 
-Helm cheatsheet to template the helm chart [RehanSaeed/Helm-Cheat-Sheet](https://github.com/RehanSaeed/Helm-Cheat-Sheet)
+Helm cheatsheet to template the helm chart [Helm-Cheat-Sheet](https://gist.github.com/tuannvm/4e1bcc993f683ee275ed36e67c30ac49)
 
 
 Sample templates for if-else, while loop
