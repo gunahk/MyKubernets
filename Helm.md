@@ -69,6 +69,11 @@ Search all  charts in repo datadog with versions
 helm search repo datadog --versions
 ```
 
+upgrade or install at a time
+```
+helm upgrade -i datadog/datadog <name of the helm chart>
+```
+
 
 helm show 
 ```
@@ -102,6 +107,20 @@ versionName-status
 ```
 helm rollback guna versionName
 ```
+
+## helm upgrade with existing values
+```
+helm upgrade  -i datadog/datadog <name of the helm chart> 
+
+--reuse-values  use the existing values
+
+--atomic  if fail automatically rollback
+
+--dry-run resources are not submitted to the k8s
+```
+
+
+
 
 TO add the helm Chart to the Github follow blog [private github hosting with private Access token](https://blog.softwaremill.com/hosting-helm-private-repository-from-github-ff3fa940d0b7)
 
