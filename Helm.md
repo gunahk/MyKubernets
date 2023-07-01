@@ -119,9 +119,30 @@ helm upgrade  -i datadog/datadog <name of the helm chart>
 --dry-run resources are not submitted to the k8s
 ```
 
+## Use Existing varibles
+```
+.Chart
+.Template
+.Release
+```
+Functions: [Helm Functions](https://helm.sh/docs/chart_template_guide/function_list/)
 
+Note:
+```
+Loops:
+With will just place the contents as it is 
+With range we can add fuctions or pipes on that
+```
 
+```
+Only include we can add pipes, we cannot add to templates 
+```
+example: 
+```
+{{- include "zluri.selectorLabels" . | nindent 8 }}  --> works
+{{- template "zluri.selectorLabels" . | nindent 8 }}  --> will not work
 
+```
 TO add the helm Chart to the Github follow blog [private github hosting with private Access token](https://blog.softwaremill.com/hosting-helm-private-repository-from-github-ff3fa940d0b7)
 
 
