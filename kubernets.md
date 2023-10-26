@@ -221,6 +221,12 @@ ingress=$(kubectl get ingress  -o custom-columns=":metadata.name")
 kubectl patch ingress ${ingress} -p '{"metadata":{"finalizers":[]}}' --type=merge
 bash
 
+Get the pods name running in the Node with the labels
+
+```bash
+Lable="intent=apps"
+kubectl get nodes -l $Lable | awk '{print $1}' | xargs -I {} kubectl describe node {} | awk '/Non-terminated Pods:/, /Allocated resources:/'
+bash
 
 
 
