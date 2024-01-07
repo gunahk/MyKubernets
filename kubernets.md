@@ -228,5 +228,11 @@ Lable="intent=apps"
 kubectl get nodes -l $Lable | awk '{print $1}' | xargs -I {} kubectl describe node {} | awk '/Non-terminated Pods:/, /Allocated resources:/'
 ```
 
+Delete the jobs with pod failing 
+
+```bash
+kubectl delete jobs $(kubectl get po | grep Image | awk {'print $1'} | rev| cut -d'-' -f2- | rev)
+```
+
 
 
