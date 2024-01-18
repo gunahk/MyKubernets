@@ -1,6 +1,6 @@
 # Tabels of Contenets:
 -  [Kubernets Cheats Sheets](#Kubernets-Cheats-Sheets)
-
+-  [Kubernets reference resources](#https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#explain)
 -   [Auto completion of kubernets Commands](#Auto-completion-of-kubernets-Commands)
 -  [Installation of kubectx and kubens
 ](#Installation-of-kubectx-and-kubens
