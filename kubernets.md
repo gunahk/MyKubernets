@@ -16,7 +16,7 @@
 # Kubernetes Cheats Sheets
 1. [Kubernets Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 2. [Kubernets Commands ](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)  (Kubectl commands Reference)
-3. [Kubernets reference resources](#https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#explain)
+3. [Kubernets reference resources](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#explain)
 
 # Auto completion of kubernets Commands 
 In Bash, we can do autocompletion of kubectl commands 
