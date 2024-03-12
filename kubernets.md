@@ -238,4 +238,8 @@ Get the total CPU and Memory of pods, Helpfull during the HPA
 ```bash
 awk '{sum += $3} END {print sum}' <(kubectl top po | tail -n +2 )'
 ```
+HPA add limits to this
+```
+( total resource / deseried pods ) * ( 100 / Desired HPA metrics )
+```
 
