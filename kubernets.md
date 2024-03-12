@@ -234,7 +234,8 @@ kubectl delete jobs $(kubectl get po | grep Image | awk {'print $1'} | rev| cut 
 ```
 
 Get the total CPU and Memory of pods, Helpfull during the HPA
-````bash
-awk '{sum += $3} END {print sum}' <(kubectl top po | tail -n +2 )
+
+```bash
+awk '{sum += $3} END {print sum}' <(kubectl top po | tail -n +2 )'
 ```
 
