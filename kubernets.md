@@ -224,7 +224,10 @@ Get the pods name running in the Node with the labels
 
 ```bash
 Lable="intent=apps"
-kubectl get nodes -l $Lable | awk '{print $1}' | xargs -I {} kubectl describe node {} | awk '/Non-terminated Pods:/, /Allocated resources:/'
+# get the pods Running
+kubectl get nodes -l $Lable | tail -n +2 |awk '{print $1}' | xargs -I {} kubectl describe node {} | awk '/Non-terminated Pods:/, /Allocated resources:/'
+# Get the node Events
+kubectl get nodes -l $Lable | tail -n +2 | awk '{print $1}' | xargs -I {} kubectl describe node {} | awk '/Events:/, /Name:/'
 ```
 
 Delete the jobs with pod failing 
