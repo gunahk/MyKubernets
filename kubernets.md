@@ -233,7 +233,8 @@ kubectl get nodes -l $Lable | tail -n +2 | awk '{print $1}' | xargs -I {} kubect
 Delete the jobs with pod failing 
 
 ```bash
-kubectl delete jobs $(kubectl get po | grep Image | awk {'print $1'} | rev| cut -d'-' -f2- | rev)
+errorMessage=image
+kubectl delete jobs $(kubectl get po | grep -i $errorMessage | awk {'print $1'} | rev| cut -d'-' -f2- | rev)
 ```
 
 Get the total CPU and Memory of pods, Helpfull during the HPA
