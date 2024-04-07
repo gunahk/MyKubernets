@@ -89,6 +89,20 @@ helm show all  datadog_repo/datadog_helm_chart
 helm show values  datadog_repo/datadog_helm_chart
 ```
 
+Helm debug, dry run and template for testng the helm chart yaml files 
+```
+--dubug --> will provide user supplied Values and 
+--template --> will provice the chart values 
+--dry-one --> to make sure it can deploy on to the k9s 
+```
+Values files 
+```
+priroty of values files 
+1. --set
+2. user provided files
+3. helm chart values file
+NOte: if null if you dodnot want to pass any value
+```
 History of  helm chart
 ```
 helm history guna
