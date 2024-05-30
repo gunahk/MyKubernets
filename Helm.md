@@ -133,6 +133,11 @@ helm upgrade  -i datadog/datadog <name of the helm chart>
 --dry-run resources are not submitted to the k8s
 ```
 
+## To check the values of the remote server, 2 sections --> user definead, merged  values files
+```
+ helm install --debug --dry-run ./mychart
+```
+
 ## Use Existing varibles
 ```
 .Chart
@@ -158,6 +163,7 @@ example:
 
 ```
 TO add the helm Chart to the Github follow blog [private github hosting with private Access token](https://blog.softwaremill.com/hosting-helm-private-repository-from-github-ff3fa940d0b7)
+
 
 
 
