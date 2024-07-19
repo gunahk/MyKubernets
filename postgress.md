@@ -12,6 +12,9 @@
 [AWS postgress workshops](https://catalog.us-east-1.prod.workshops.aws/workshops/2a5fc82d-2b5f-4105-83c2-91a1b4d7abfe/en-US/4-advanced)
 
 [link to below Commnads](https://aws.amazon.com/blogs/database/managing-postgresql-users-and-roles/)
+
+[pstgress parameter ref](https://postgresqlco.nf/doc/en/param/)
+
 ```bash
 -- Revoke privileges from 'public' role
 REVOKE CREATE ON SCHEMA public FROM PUBLIC;
