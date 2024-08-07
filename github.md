@@ -1,4 +1,14 @@
 
+cheet sheet
+```bash
+git stash save "Work in progress"
+git stash pop
+git diff 
+git
+#last 2 commits diff
+git diff HEAD~2 HEAD
+```
+
 
 # combine last n commits to one commit (squash) 
 ```bass
@@ -11,15 +21,7 @@ git commit -m ""
 # force push
 git push -f
 ```
-
-```bash
-git stash save "Work in progress"
-git stash pop
-git diff 
-#last 2 commits diff
-git diff HEAD~2 HEAD
-```
-Revert  changes in local
+# Revert  changes in local
 ```bash
 # change commit id
 git commit --amend -m "sdf"
@@ -51,13 +53,7 @@ git clean -df
 # to chekwhat have done locally
 git reflog 
 ```
-
-```bash
-# modify the last commot message
-git commit --amend -m "New commit message"
-```
-
-cheerypick from other branch
+#  cheerypick from other branch
 ```bash
 git checkout feature
 git log  --> commit id abc123
@@ -76,7 +72,7 @@ git cherry-pick --continue
 git cherry-pick --abort
 ```
 
-commit to new branch
+# commit to new branch
 ```bash
 git push origin develop:update-docker-imag
 ```
