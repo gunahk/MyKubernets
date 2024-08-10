@@ -237,6 +237,12 @@ errorMessage=image
 kubectl delete jobs $(kubectl get po | grep -i $errorMessage | awk {'print $1'} | rev| cut -d'-' -f2- | rev)
 ```
 
+limit is for Enforcing, Reqiests is for Allocating resourcse Cgroups(Allocate the Resources), Namespaces(Segregate the resources)
+
+if CPU more --> throtled wait for some time to process requests
+if Memory more --> OOM killed pods will restart
+
+
 Get the total CPU and Memory of pods, Helpfull during the HPA
 
 ```bash
