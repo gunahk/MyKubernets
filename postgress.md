@@ -48,6 +48,15 @@ GRANT readonly TO reporting_user1;
 GRANT readonly TO reporting_user2;
 GRANT readwrite TO app_user1;
 GRANT readwrite TO app_user2;
+
+--
+-- Superuser 
+--
+
+-- Create a final user with password
+CREATE USER postgres_adm WITH PASSWORD 'secret';
+GRANT rds_superuser to postgres_adm;
+
 ```
 
 
