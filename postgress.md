@@ -375,12 +375,17 @@ WHERE
 \timing
 
 
-
+SELECT CURRENT_USER;
 
 SELECT version();
 
 ```
 
 
-
+```bash
+To terminate the active connections to the dvdrental database, you use the following query:
+SELECT pg_terminate_backend (pid)
+FROM pg_stat_activity
+WHERE datname = 'dvdrental';
+```
 
