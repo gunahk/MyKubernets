@@ -237,6 +237,16 @@ errorMessage=image
 kubectl delete jobs $(kubectl get po | grep -i $errorMessage | awk {'print $1'} | rev| cut -d'-' -f2- | rev)
 ```
 
+Delete the pods with pod in Terminating
+```bash
+kubectl get pods --all-namespaces | grep Terminating | awk '{print $1,$2}' | while read ns po; do
+  kubectl get pod "$po" -n "$ns" -o json | \
+    jq 'del(.metadata.finalizers)' | \
+    kubectl apply -n "$ns" -f - && \
+  kubectl delete pod "$po" -n "$ns" --force --grace-period=0
+done
+```
+
 limit is for Enforcing, Reqiests is for Allocating resourcse Cgroups(Allocate the Resources), Namespaces(Segregate the resources)
 
 if CPU more --> throtled wait for some time to process requests
