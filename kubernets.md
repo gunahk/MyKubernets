@@ -262,4 +262,7 @@ HPA add limits to this
 ```
 ( total resource / deseried pods ) * ( 100 / Desired HPA metrics )
 ```
-
+Debog Pod Command
+```
+kubectl debug <pod_name> -it --image=busybox -- /bin/sh
+```
